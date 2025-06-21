@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Complex UI</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .navbar
+    {
+        position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #333;
+      color: white;
+      padding: 15px 20px;
+      z-index: 1000; 
+    }
+    /* Grid Gallery */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .grid-container img {
+      width: 100%;
+      height: auto;
+    }
+
+    /* Flex Section */
+    .flex-section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap; /* Ensures items stay in a single row */
+    padding: 30px 0;
+    background-color: #f8f9fa;
+    width: 100%; /* Full width of container */
+    max-width: 100%; /* Avoids overflow on large screens */
+  }
+
+  .flex-section > div {
+    text-align: center;
+    width: 250px; /* Optional: Control width of individual cards */
+    margin: 10px;
+  }
+
+  .flex-section img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+
+    /* Card Hover Effects */
+    .card .btn:hover {
+      background-color: #0056b3;
+      transition: 0.3s ease;
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Complex UI</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contacts</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Blogs</a></li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" />
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<!-- Carousel -->
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
+  </div>
+
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="image1.jpg" class="d-block w-100" alt="Slide 1">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second Slide Title</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+        <a href="#" class="btn btn-primary">Call to Action</a>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="image9.jpg" class="d-block w-100" alt="Slide 2">
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<!-- Flex Section -->
+<div class="flex-section">
+  <div>
+    <img src="image3.jpg" class="img-fluid rounded-circle" alt="Tech" />
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, dolores?</p>
+  </div>
+  <div>
+    <img src="image4.jpg" class="img-fluid rounded-circle" alt="Nature" />
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, magnam?</p>
+  </div>
+  <div>
+    <img src="image5.jpg" class="img-fluid rounded-circle" alt="Space" />
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, cupiditate.</p>
+  </div>
+</div>
+
+<!-- Grid Gallery -->
+<div class="container py-4">
+  <div class="grid-container">
+    <img src="image1.jpg" alt="Image1" />
+    <img src="image2.webp" alt="Image 2" />
+    <img src="image3.jpg" alt="Image 3" />
+    <img src="image4.jpg" alt="Image 4" />
+    <img src="image5.jpg" alt="Image 5" />
+    <img src="image6.jpg" alt="Image 6" />
+    <img src="image7.jpg" alt="Image 7" />
+    <img src="image8.jpg" alt="Image 8" />
+    <img src="image9.jpg" alt="Image 9" />
+  </div>
+</div>
+
+<!-- Bootstrap Cards -->
+<div class="container py-4">
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card shadow-sm">
+        <img src="image5.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card Title</h5>
+          <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, assumenda.</p>
+          <a href="#" class="btn btn-primary">Call to Action</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card shadow-sm">
+        <img src="image6.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">card title</h5>
+          <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet, facere.</p>
+          <a href="#" class="btn btn-primary">Call to Action</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card shadow-sm">
+        <img src="image7.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card Title</h5>
+          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, vel?</p>
+          <a href="#" class="btn btn-primary">Call to Action</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-dark p-4 mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h6>Useful Links</h6>
+        <ul class="list-unstyled">
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h6>More Links</h6>
+        <ul class="list-unstyled">
+          <li><a href="#">Link A</a></li>
+          <li><a href="#">Link B</a></li>
+          <li><a href="#">Link C</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h6>Contact Us</h6>
+        <p>Email: example@example.com</p>
+        <p>Phone: +1 (555) 123-4567</p>
+      </div>
+    </div>
+    <div class="text-center pt-3">
+      &copy; 2025 Complex UI. All Rights Reserved.
+      <br/>
+      <a href="#" class="btn btn-sm btn-secondary mt-2">Back to Top</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
